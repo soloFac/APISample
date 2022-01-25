@@ -32,6 +32,14 @@ namespace APISample
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "APISample", Version = "v1" });
             });
+            services.AddCors(options =>
+            {
+                options.AddPolicy("nombre",
+                    builder =>
+                    {
+                        builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+                    });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +55,8 @@ namespace APISample
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors("nombre");
 
             app.UseAuthorization();
 

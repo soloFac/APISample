@@ -1,4 +1,5 @@
 ﻿using APISample.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,7 @@ namespace APISample.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("nombre")]
     public class TecnologiasController : ControllerBase
     {
         [HttpGet]

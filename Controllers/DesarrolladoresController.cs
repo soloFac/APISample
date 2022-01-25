@@ -1,4 +1,5 @@
 ﻿using APISample.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ namespace APISample.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("nombre")]
     public class DesarrolladoresController : ControllerBase
     {
         [HttpGet]
@@ -23,7 +25,7 @@ namespace APISample.Controllers
                     return desarrolladores;
                 }
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
                 throw;
             }
@@ -40,10 +42,16 @@ namespace APISample.Controllers
                     db.SaveChanges();
                 }
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
                 throw;
             }
+        }
+
+        [HttpDelete]
+        public void DeleteDesarrolladores([FromBody] int id)
+        {
+
         }
 
     }
