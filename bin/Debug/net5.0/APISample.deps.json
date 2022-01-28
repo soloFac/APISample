@@ -37,7 +37,6 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.0",
           "NLog": "4.7.13",
-          "NLog.Schema": "4.7.13",
           "Swashbuckle.AspNetCore": "5.6.3",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
@@ -748,7 +747,6 @@
           "lib/netstandard2.0/NLog.dll": {}
         }
       },
-      "NLog.Schema/4.7.13": {},
       "runtime.native.System/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -3396,13 +3394,6 @@
       "sha512": "sha512-AvoGpCuq36B+0wY313XA6gC+YeMvk24rqF8P+HS9fInBGOjCzPjpXp2ln9ATZjPOJtXgHfc8zNmTjyswFGLxvg==",
       "path": "nlog/4.7.13",
       "hashPath": "nlog.4.7.13.nupkg.sha512"
-    },
-    "NLog.Schema/4.7.13": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-IlbHsTRzA1YeAbrJTVETZRWkYXqo5YnaF/ppJBdE6kKD4/IjuA0CUaZMSQKbOLzwxGARMx3An1V38zjGEjRekA==",
-      "path": "nlog.schema/4.7.13",
-      "hashPath": "nlog.schema.4.7.13.nupkg.sha512"
     },
     "runtime.native.System/4.3.0": {
       "type": "package",

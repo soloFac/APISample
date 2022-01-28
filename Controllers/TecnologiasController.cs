@@ -48,7 +48,7 @@ namespace APISample.Controllers
         {
             try
             {
-                if (string.IsNullOrEmpty(tecnologia.Tecnologia))
+                if (!string.IsNullOrEmpty(tecnologia.Tecnologia) && (tecnologia.Tecnologia.Length > 3))
                 {
                     using (var db = new desarrolladoresdbContext())
                     {

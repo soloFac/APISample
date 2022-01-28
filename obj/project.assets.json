@@ -576,16 +576,6 @@
           "lib/netstandard2.0/NLog.dll": {}
         }
       },
-      "NLog.Schema/4.7.13": {
-        "type": "package",
-        "contentFiles": {
-          "contentFiles/any/any/NLog.xsd": {
-            "buildAction": "None",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          }
-        }
-      },
       "runtime.native.System/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -2613,19 +2603,6 @@
         "lib/xamarinios10/NLog.xml",
         "nlog.4.7.13.nupkg.sha512",
         "nlog.nuspec"
-      ]
-    },
-    "NLog.Schema/4.7.13": {
-      "sha512": "IlbHsTRzA1YeAbrJTVETZRWkYXqo5YnaF/ppJBdE6kKD4/IjuA0CUaZMSQKbOLzwxGARMx3An1V38zjGEjRekA==",
-      "type": "package",
-      "path": "nlog.schema/4.7.13",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "content/NLog.xsd",
-        "contentFiles/any/any/NLog.xsd",
-        "nlog.schema.4.7.13.nupkg.sha512",
-        "nlog.schema.nuspec"
       ]
     },
     "runtime.native.System/4.3.0": {
@@ -6266,7 +6243,6 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.0",
       "NLog >= 4.7.13",
-      "NLog.Schema >= 4.7.13",
       "Swashbuckle.AspNetCore >= 5.6.3"
     ]
   },
@@ -6329,10 +6305,6 @@
             "version": "[5.0.0, )"
           },
           "NLog": {
-            "target": "Package",
-            "version": "[4.7.13, )"
-          },
-          "NLog.Schema": {
             "target": "Package",
             "version": "[4.7.13, )"
           },
