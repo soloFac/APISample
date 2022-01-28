@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dzsEaCq35+VtwO44AR1zYHMyuzCrD3uTzt7yOw8ezrrunfqvlcqCqvF7MsdUdg0iWR9z3jnTqoMhT9TRF2eJ5g==",
+  "dgSpecHash": "DudKcngtO9vLDRrfxKcjAaI++qbj5MyU3kuUjr1reYlyBvKkHXPuZay5tafw2iWcjVMJBLV3KR8UxRVZbur+7Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\franc\\Desktop\\repos\\APISample\\APISample.csproj",
   "expectedPackageFiles": [
@@ -43,6 +43,8 @@
     "C:\\Users\\franc\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\franc\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\franc\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
+    "C:\\Users\\franc\\.nuget\\packages\\nlog\\4.7.13\\nlog.4.7.13.nupkg.sha512",
+    "C:\\Users\\franc\\.nuget\\packages\\nlog.schema\\4.7.13\\nlog.schema.4.7.13.nupkg.sha512",
     "C:\\Users\\franc\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\franc\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
     "C:\\Users\\franc\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",

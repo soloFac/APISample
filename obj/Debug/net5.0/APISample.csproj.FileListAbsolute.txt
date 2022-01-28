@@ -56,3 +56,4 @@ C:\Users\franc\Desktop\repos\APISample\obj\Debug\net5.0\APISample.dll
 C:\Users\franc\Desktop\repos\APISample\obj\Debug\net5.0\ref\APISample.dll
 C:\Users\franc\Desktop\repos\APISample\obj\Debug\net5.0\APISample.pdb
 C:\Users\franc\Desktop\repos\APISample\obj\Debug\net5.0\APISample.genruntimeconfig.cache
+C:\Users\franc\Desktop\repos\APISample\bin\Debug\net5.0\NLog.dll

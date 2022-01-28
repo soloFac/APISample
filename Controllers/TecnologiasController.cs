@@ -4,7 +4,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Net;
 using System.Threading.Tasks;
+using NLog;
 
 namespace APISample.Controllers
 {
@@ -13,6 +15,8 @@ namespace APISample.Controllers
     [EnableCors("nombre")]
     public class TecnologiasController : ControllerBase
     {
+        public static Logger log = LogManager.GetLogger("myAppLogger");
+
         [HttpGet]
         public async Task<ActionResult<List<Tecnologias>>> Get()
         {
@@ -21,17 +25,26 @@ namespace APISample.Controllers
                 using (var db = new desarrolladoresdbContext())
                 {
                     var tecnologias = await db.Tecnologias.ToListAsync();
-                    return tecnologias;
+                    if(tecnologias != null)
+                    {
+                        return Ok(tecnologias);
+                    }
+                    else
+                    {
+                        return NotFound();
+                    }
                 }
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
+                log.Info(ex.Message + "- BadRequest GET Lista Tecnologias" + "-" + System.DateTime.Now);
+                return BadRequest();
                 throw;
             }
         }
 
         [HttpPost]
-        public void PostTecnologias([FromBody] Tecnologias tecnologia)
+        public async Task<HttpStatusCode> PostTecnologias([FromBody] Tecnologias tecnologia)
         {
             try
             {
@@ -41,15 +54,18 @@ namespace APISample.Controllers
                     {
                         db.Tecnologias.Add(tecnologia);
                         db.SaveChanges();
+                        return HttpStatusCode.OK;
                     }
                 }
                 else
                 {
-                    //mostrar mensaje de error
+                    return HttpStatusCode.NotAcceptable;
                 }
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
+                log.Info(ex.Message + "- BadRequest POST Tecnologia id: " + tecnologia.IdTecnologia + "-" + System.DateTime.Now);
+                return HttpStatusCode.BadRequest;
                 throw;
             }
         }

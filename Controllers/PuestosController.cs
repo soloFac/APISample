@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
+using NLog;
 
 namespace APISample.Controllers
 {
@@ -14,6 +15,8 @@ namespace APISample.Controllers
     [EnableCors("nombre")]
     public class PuestosController : ControllerBase
     {
+        public static Logger log = LogManager.GetLogger("myAppLogger");
+
         [HttpGet]
         public async Task<ActionResult> GetPuestos()
         {
@@ -22,13 +25,22 @@ namespace APISample.Controllers
                 using (var db = new desarrolladoresdbContext())
                 {
                     var puestos = await db.Puestos.ToListAsync();
-                    return Ok(puestos);
+                    if(puestos != null)
+                    {
+                        return Ok(puestos);
+                    }
+                    else
+                    {
+                        return NotFound();
+                    }
                 }
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
+                log.Info(ex.Message + "- BadRequest GET List Puestos" + "-" + System.DateTime.Now);
+
+                return BadRequest();
                 throw;
-                return NotFound();
             }
         }
 
@@ -46,15 +58,16 @@ namespace APISample.Controllers
                     }
                     else
                     {
-                        return NotFound();
+                        return NotFound("El puesto no fue encontrado");
                     }
                     //ver que sucede si no encuentra a alguien con ese id
                 }
             }
             catch (System.Exception)
             {
+                log.Info(ex.Message + "- BadRequest GET Puesto id: " + id + "-" + System.DateTime.Now);
+                return BadRequest("Error en la consulta");
                 throw;
-                return BadRequest();
             }
         }
 
@@ -81,13 +94,16 @@ namespace APISample.Controllers
                         //mostrar mensaje de error que el string esta vacio
                         //return new 
                         return HttpStatusCode.NotAcceptable;
+
                     }
                 }
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
-                throw;
+
+                log.Info(ex.Message + "- BadRequest POST Puesto id:" + puesto.IdPuesto + "-" + System.DateTime.Now);
                 return HttpStatusCode.BadRequest;
+                throw;
             }
         }
     }
