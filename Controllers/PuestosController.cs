@@ -63,7 +63,7 @@ namespace APISample.Controllers
                     //ver que sucede si no encuentra a alguien con ese id
                 }
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
                 log.Info(ex.Message + "- BadRequest GET Puesto id: " + id + "-" + System.DateTime.Now);
                 return BadRequest("Error en la consulta");
